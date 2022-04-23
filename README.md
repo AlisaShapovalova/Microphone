@@ -1,1 +1,2 @@
 # Microphone
+A microphone, colloquially called a mic or mike (/maɪk/), is a transducer that converts sound into an electrical signal. Microphones are used in many applications such as telephones, hearing aids, public address systems for concert halls and public events, motion picture production, live and recorded audio engineering, sound recording, two-way radios, megaphones, and radio and television broadcasting. They are also used in computers for recording voice, speech recognition, VoIP, and for other purposes such as ultrasonic sensors or knock sensors.
