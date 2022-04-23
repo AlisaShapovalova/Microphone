@@ -1,0 +1,40 @@
+import SwiftUI
+
+struct TextView: UIViewRepresentable {
+    
+    @Binding var text: String
+    let textView = UITextView()
+    
+    class Coordinator: NSObject, UITextViewDelegate {
+        var parent: TextView
+        
+        init(_ parent: TextView) {
+            self.parent = parent
+        }
+        
+        func textViewDidChange(_ textView: UITextView) {
+            parent.text = textView.text
+        }
+        
+        func textViewDidEndEditing(_ textView: UITextView) {
+            textView.isEditable = false
+        }
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(self)
+    }
+    
+    func makeUIView(context: Context) -> UITextView {
+        textView.delegate = context.coordinator
+        textView.dataDetectorTypes = .link
+        textView.becomeFirstResponder()
+        
+        return textView
+    }
+    
+    func updateUIView(_ uiView: UITextView, context: Context) {
+        uiView.text = text
+    }
+}
+
